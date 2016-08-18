@@ -1,0 +1,16 @@
+
+@mixin a-link($base-color, $hover-color, $base-td: underline, $hover-td: none) {
+	
+	a,
+	a:link,
+	a:visited {
+		color: $base-color;
+		text-decoration: $base-td;
+	}
+
+	a:hover,
+	a:active {
+		color: $hover-color;
+		text-decoration: $hover-td;
+	}
+}

@@ -1,0 +1,551 @@
+// Header & Footer
+$bg-open-color: #2eac48;
+$link-color: #fff;
+$text-color: #eee;
+$link-color-hover: #fc0;
+
+$green-dark: #006633;
+$green-light: #009933;
+$yellow: #FFCC00;
+$orange: #FE9900;
+$gray: #F4F4F4;
+$font-size: 14px;
+$font-family: 'Arial';
+$line-height: 125%;
+$font-regular: 'Lato_Regular', Arial, sans-serif;
+$font-bold: 'Lato_Black', Arial, sans-serif;
+$font-leight: 'Lato_Light', Arial, sans-serif;
+$fo-vert: 20px;
+$fo-hor: 0px;
+
+$tablet: "(max-width: 1200px)";
+$phone: "(max-width: 960px)";
+
+@mixin page-width($min-width: 960px, $max-width: 1600px) {
+  min-width: $min-width;
+  max-width: $max-width;
+}
+
+.cbp-hrmenu {
+
+	width: 100%;
+	background-color: $green-light;
+	font-size: 12px;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	& > ul,
+	& .cbp-hrsub-inner {
+		margin: 0 auto;
+		display: inline-block;
+	}
+
+	& > ul > li {
+		display: inline-block;
+		vertical-align: middle;
+	
+	.fa {
+		font-size: 18px;
+	
+		&.fa-home{
+			padding-left: 3px;
+    		font-size: 23px;
+    		vertical-align: bottom;
+		}
+
+		&.fa-th{
+			width: 16px;
+    		height: 16px;
+    		margin-left: 0px;
+    		background: url("/img/grid-icon.png") no-repeat;
+    		vertical-align: text-bottom;
+		
+			&::before{
+				content: ''; 
+			}
+		}
+	}
+	
+		&::before {
+    		content: "";
+    		height: 16px;
+    		width: 1px;
+    		display: inline-block;
+    		background-color: #eee;
+    		opacity: .5;
+    		font-weight: normal;
+    		vertical-align: sub;
+		}
+
+		&:first-child::before {
+			content: " ";
+			height: 1px;
+			line-height: 1px;
+		}
+	}
+
+	& > ul > li > a {
+    	display: inline-block;
+		padding: 13px 11px;
+		color: $link-color;
+		font-size: 15px;
+		text-decoration: none;
+		outline: none;
+	}
+
+	& > ul > li:first-child > a {
+		padding-left: 0;
+		outline: none;
+	}
+
+	& > ul > li:last-child > a {
+		padding-right: 0;
+		outline: none;
+	}
+
+	& > ul > li > a:hover {
+		color: $link-color-hover;
+	}
+
+	& > ul > li.cbp-hropen a {	
+		background: $bg-open-color;
+		color: #fff;
+		outline: none;
+
+		&:hover,
+		&:active { 
+			color: #f92;
+			text-decoration: none;
+		}
+	}
+
+	.cbp-hrsub {
+		position: absolute;
+		display: none;
+		background: $bg-open-color;
+		width: 100%;
+		left: 0;
+	}
+
+	.cbp-hropen .cbp-hrsub {
+		display: block;
+		padding-bottom: 3em;
+	}
+
+	.cbp-hrsub-inner > div {
+		float: left;
+		padding: 0 2em 0;
+
+		&.half {
+			width: 50%;
+		}
+
+		&.third {
+			width: 33%;
+		}
+
+		&.fourth {
+			width: 25%;
+		}
+
+		&.fifth {
+			width: 20%;
+		}
+
+		&.fifth {
+			width: 20%;
+		}
+	}
+
+	.cbp-hrsub-inner:before,
+	.cbp-hrsub-inner:after {
+		content: " ";
+		display: table;
+	}
+
+	.cbp-hrsub-inner:after {
+		clear: both;
+	}
+
+	.cbp-hrsub-inner > div a {
+		line-height: 150%;
+		outline: none;
+	}
+
+	.cbp-hrsub-inner > div p {
+		margin: 0 0 10px;
+		padding: 0;
+		color: $text-color;
+	}
+
+	.cbp-hrsub h4 {
+		margin: 0;
+		padding: 2em 0 0.5em;
+		color: lighten($text-color, 2%);
+		text-shadow: 0 0 1px #777;
+		font-size: 160%;
+		font-weight: 400;
+	}
+	
+	.fa-caret-down{
+		vertical-align: bottom;
+	}
+}
+
+header, 
+footer {
+	@include page-width;
+
+	font-family: $font-family;
+	font-size: $font-size;
+	line-height: $line-height;
+
+	.col.pull-right {	float: right; }
+	.pull-left { float: left; }
+}
+
+.header {
+
+	.sub-nav {
+		position: relative;
+		height: 96px;
+		background-color: #fff;
+		font-size: $font-size + 2px;
+
+		a{
+			margin-left: 4px;
+			padding: 7px 43px;
+		}
+
+		a:link,
+		a:visited {
+    		color: #0a5508;
+    		font-size: 17px;
+		}
+
+		ul{
+
+			a:hover,
+			a:active {
+				background: none;
+				color: $orange;
+				text-decoration: none;
+				outline: none;
+			}
+
+			.selected{
+
+				&:before{
+					display: none;
+				}
+
+				a{
+					background: $orange;
+					color: white;
+					border-radius: 18px;
+					text-decoration: none;
+				}
+
+				+ li{
+			
+					&:before{
+						display: none;
+					}
+				}
+			}
+		}
+
+		.logo {
+			position: absolute;
+			display: block;
+			width: 145px;
+			height: 96px;
+			background-position: left 50%;
+			background-repeat: no-repeat;
+
+			&.logo-ds {	
+				top: 0;
+				left: 7px;
+				background-image: url('/img/ds_head_logo_tiny.png');
+				outline: none;
+			}
+		}
+
+		& > ul {
+			position: absolute;
+			margin: 0;
+			right: $fo-hor;
+			line-height: 96px;
+		}
+
+		ul > li {
+			display: inline-block;
+			
+			&::before {
+    			content: "";
+    			display: inline-block;
+    			height: 19px;
+    			width: 1px;
+    			background: #d4d4d3;
+    			vertical-align: middle;
+			}
+
+			&:first-child::before {
+				content: " ";
+				line-height: 1px;
+				height: 1px;
+				font-size: 13px;
+			}
+		}
+	}
+}
+
+.footer {
+	min-height: 150px;
+	background-color: #fff;
+	color: #777;
+
+	div.row {
+		position: relative;
+
+		ul{
+			float: left;
+			margin: 23px 0 24px;
+    		padding-left: 20px;
+
+			li{
+				float: left;
+				display: inline-block;
+				margin-right: 40px;
+				list-style: none;
+				font-family:  $font-family;
+				font-size: 15px;
+			}
+		}
+
+		.col {
+			position: absolute;
+
+			&.col-menu {
+				top: $fo-vert; 
+				left: $fo-hor;
+			}
+
+			&.col-info,
+			&.col-contacts {
+				font-size: 90%;
+			}
+
+			&.col-info {
+				padding-left: 24px;
+
+				p{
+					font-size: 14px;
+					font-family: $font-family;
+					line-height: 42px;
+				}
+			}
+
+			&.col-contacts {
+				right: 8px;
+				font-size: 90%;
+				text-align: right;
+
+				p{
+					font-size: 14px;
+					font-family: $font-family;	
+					line-height: 20px;				
+				}
+			}
+		}
+
+		.logo {
+			position: relative;
+			display: inline-block;
+			width: 140px;
+    		height: 52px;
+    			
+			&.logo-sb {
+				float: right;
+    			background: url("/img/sber_foot_logo_tiny.png") no-repeat;
+    			background-position: 0% 75%;
+    			outline: none;
+			}
+
+			&.logo-ds {
+				float: left;
+				background: url('/img/ds_foot_logo_tiny.png') no-repeat;
+				margin-right: 10px;
+				outline: none;
+			}
+		}
+	}
+
+//////////////////////////////////////////////////////////////
+// Common
+	a:link,
+	a:visited {
+		color: $green-dark;
+		text-decoration: underline;
+	}
+
+	a:hover,
+	a:active {
+		color: $orange;
+		text-decoration: none;
+	}
+
+	ul.menu {
+		color: $green-dark;
+		padding: 0;
+		
+		li {
+			display: inline-block;
+			margin: 0 0 0 35px;
+			&:first-child {margin-left: 0}
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////
+// Responsive
+@media #{$tablet} {
+	.cbp-hrmenu{
+
+		ul{
+			li{
+				a{
+					padding: 12px 5px 14px;
+					font-size: 14px;
+					outline: none;
+				}
+
+				.fa.fa-home{
+					font-size: 20px;
+				}
+					
+				.fa.fa-th{
+					margin-left: 0;
+				}
+			}
+		}
+
+		.navbar-right{
+			padding-right: 20px;
+		}
+	}
+
+	.header .sub-nav > ul{
+		padding-right: 0;
+	}
+
+	.footer{
+		max-width: 935px;
+    	min-width: 935px;
+
+    	div.row .col.col-info p{
+    		line-height: 22px;
+    	}	
+	}
+}
+
+@media #{$phone} {
+	.cbp-hrmenu{
+
+		ul{
+			li{
+				a{
+					padding: 12px 3px 14px;
+				}
+			}
+		}
+	}
+
+	.footer{
+		
+		.logo-sb{
+			margin-right: 10px;
+		}
+
+		.col-contacts{
+			right: 0!important;
+   			margin-right: 20px;
+		}
+	}
+}
+
+
+$size: 1px;
+@media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) { 
+
+	.header{
+
+		.sub-nav{
+			
+			.logo{
+
+				&.logo-ds{
+					background: url("/img/ds_head_logo.png") no-repeat;
+					background-size: 145px 60px;
+					background-position: left 50%;
+				}
+			}
+		}
+	} 
+
+	.footer{
+
+		div.row{
+
+			.logo {
+
+				&.logo-sb {
+			    	background: url("/img/sber_foot_logo.png") no-repeat;
+			    	background-size: 120px 23px;
+    				background-position: 0% 75%;
+				}
+
+				&.logo-ds {
+					background: url('/img/ds_foot_logo.png') no-repeat;
+					background-size: 120px 50px;
+				}
+			}
+		} 
+	}			
+}
+
+@media 
+    only screen and (-webkit-min-device-pixel-ratio: 4),
+    only screen and (   min--moz-device-pixel-ratio: 4),
+    only screen and (     -o-min-device-pixel-ratio: 4/1),
+    only screen and (        min-device-pixel-ratio: 4),
+    only screen and (                min-resolution: 360dpi),
+    only screen and (                min-resolution: 4dppx) { 
+
+	.footer{
+
+		div.row{
+
+			.logo {
+
+				&.logo-sb {
+			    	background: url("/img/sber_foot_logo.png") no-repeat;
+				}
+
+				&.logo-ds {
+					background: url('/img/ds_foot_logo.png') no-repeat;
+				}
+			}
+		} 
+	}			
+}

@@ -1,0 +1,108 @@
+$green-dark: #006633;
+$green-light: #009933;
+$yellow: #FFCC00;
+$orange: #FE9900;
+$gray: #F4F4F4;
+
+.btn{
+	display: inline-block;
+    position: relative;
+    padding: 7px 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: "Lato_Bold", Arial, sans-serif;
+    border: 3px solid;
+    border-radius: 50px;
+	transition: background-color 0.2s ease-out, color 0.2s ease-out;
+	cursor: pointer;
+
+	&.downloads{
+		border-color: $yellow;
+		color: $yellow;
+
+		&:hover{
+			background-color: $yellow;
+			color: white;
+		}
+	}
+
+	&.registration{
+		border-color: $green-dark;
+		color: $green-dark;
+
+		&:hover{
+			background-color: $green-dark;
+			color: white;
+		}
+	}
+}
+
+.btn-ghost {
+	color: $yellow;
+	border: 4px solid $yellow;
+
+	
+
+	&:hover {
+		background-color: #fdc900;
+	}
+
+	// &.btn-lg {
+	// 	border-radius: 30px;
+	// }
+	
+}
+
+input[type=number]{
+
+	&::-webkit-inner-spin-button { 
+		display: none;
+	}
+}
+
+input[type=number]{
+
+	&::-webkit-inner-spin-button{
+		&:after,
+		&:before{
+			display: none;
+		}
+	}
+}
+
+input[type=number]{
+
+	&::-webkit-inner-spin-button{
+
+		&:before {
+			display: none;
+		}
+    }
+}
+
+input[type=number]{
+
+	&::-webkit-inner-spin-button{
+		&:after {
+			display: none;
+		}
+	}
+}
+
+.dropdown{
+    background: url(/img/dropdown.png);
+    display: inline-block;
+    width: 11px;
+    height: 5px;
+    position: absolute;
+    right: -70px;
+
+    &#down{
+    	top: 0px;
+		transform: scale(-1, -1);
+    }
+
+    &#up{
+		bottom: 10px;
+    }
+}
