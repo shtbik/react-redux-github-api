@@ -1,2 +1,2 @@
 # Redux GitHub API
-This project show's the list of public repositories on GitHub
+This project shows the list of public repositories on GitHub
