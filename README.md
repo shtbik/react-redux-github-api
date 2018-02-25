@@ -1,2 +1,2 @@
-# Redux GitAPI
-It displays the list of repositories on GitHub. API GitHub / Redux React.
+# Redux GitHub API
+This project show's the list of public repositories on GitHub
